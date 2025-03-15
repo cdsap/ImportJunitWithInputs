@@ -1,7 +1,5 @@
 pluginManagement {
-
     repositories {
-
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -16,22 +14,14 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        mavenCentral()
         google()
+        gradlePluginPortal()
         mavenCentral()
     }
 }
-plugins {
-    id("com.gradle.develocity") version "3.19.1"
-}
-develocity {
-    server = "https://ge.solutions-team.gradle.com/"
-    allowUntrustedServer = true
-    buildScan {
-        uploadInBackground.set(true)
-        publishing { true }
 
-    }
-}
-rootProject.name = "My Application"
-include(":app")
+rootProject.name = "plugin-importer"
+include(":plugin")
+
 
