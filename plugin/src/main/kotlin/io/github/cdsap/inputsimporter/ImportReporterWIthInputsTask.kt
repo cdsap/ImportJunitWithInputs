@@ -19,14 +19,6 @@ import java.nio.file.attribute.BasicFileAttributes
 import java.util.jar.JarFile
 import kotlin.sequences.forEach
 
-private const val KOTLIN_CLASSES = "kotlin-classes"
-
-private const val COMPILE_AND_RUNTIME_NOT_NAMESPACED_R_CLASS_JAR =
-    "compile_and_runtime_not_namespaced_r_class_jar"
-
-private const val COMPILE_APP_CLASSES_JAR = "compile_app_classes_jar"
-
-private const val COMPILE_LIBRARY_CLASSES_JAR = "compile_library_classes_jar"
 
 @CacheableTask
 abstract class ImportReporterWIthInputsTask : DefaultTask() {
@@ -166,6 +158,16 @@ abstract class ImportReporterWIthInputsTask : DefaultTask() {
         })
     }
 
-}
+    companion object {
+        const val KOTLIN_CLASSES = "kotlin-classes"
 
+        const val COMPILE_AND_RUNTIME_NOT_NAMESPACED_R_CLASS_JAR =
+            "compile_and_runtime_not_namespaced_r_class_jar"
+
+        const val COMPILE_APP_CLASSES_JAR = "compile_app_classes_jar"
+
+        const val COMPILE_LIBRARY_CLASSES_JAR = "compile_library_classes_jar"
+
+    }
+}
 
