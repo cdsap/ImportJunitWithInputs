@@ -13,4 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
-build-logic/plugin/build/
+plugin/build/
+
