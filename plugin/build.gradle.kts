@@ -28,7 +28,7 @@ dependencies {
     testImplementation(libs.junit.jupiter)
 
 }
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 group = "io.github.cdsap"
 
 tasks.test {
@@ -37,10 +37,14 @@ tasks.test {
 gradlePlugin {
     plugins {
         register("junitImporter") {
+            website = "https://github.com/cdsap/ImportJunitWithInputs"
+            vcsUrl = "https://github.com/cdsap/ImportJunitWithInputs.git"
             id = "io.github.cdsap.import-inputs"
             implementationClass =
                 "io.github.cdsap.inputsimporter.JunitImportReporterWithInputsPlugin"
             displayName = "Import Instrumentation test inputs"
+            description = "This plugin collects the relevant AndroidTest inputs for test/tested APKs in the Instrumentation variants"
+
             tags = listOf("instrumentation")
         }
     }
